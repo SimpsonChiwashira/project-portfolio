@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.100" timestamp="2025-02-10T03:10:27.859957" hostname="Simpson"><testcase classname="test.part1_test" name="test_show_all_videos" file="test\part1_test.py" line="11" time="0.005"><failure message="assert &quot;Here's a list of all available videos:&quot; in 'Here are the available videos:'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x0000019BAA42DF10&gt;
+
+    def test_show_all_videos(capfd):
+        player = VideoPlayer()
+        player.show_all_videos()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 6
+&gt;       assert "Here's a list of all available videos:" in lines[0]
+E       assert "Here's a list of all available videos:" in 'Here are the available videos:'
+
+test\part1_test.py:18: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase></testsuite></testsuites>

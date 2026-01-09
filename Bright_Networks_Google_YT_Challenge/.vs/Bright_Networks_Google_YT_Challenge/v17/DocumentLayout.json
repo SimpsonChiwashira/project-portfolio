@@ -1,0 +1,138 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\run.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\run.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\videolibrary_test.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test\\videolibrary_test.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video_player.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\video_player.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\video.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part1_test.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test\\part1_test.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\command_parser.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\command_parser.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part2_test.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test\\part2_test.py||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "run.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\run.py",
+              "RelativeDocumentMoniker": "src\\run.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\run.py",
+              "RelativeToolTip": "src\\run.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:03:41.461Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "part1_test.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part1_test.py",
+              "RelativeDocumentMoniker": "test\\part1_test.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part1_test.py",
+              "RelativeToolTip": "test\\part1_test.py",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAABEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T03:13:17.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "video_player.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video_player.py",
+              "RelativeDocumentMoniker": "src\\video_player.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video_player.py",
+              "RelativeToolTip": "src\\video_player.py",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAAABYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:59:17.231Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "video.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video.py",
+              "RelativeDocumentMoniker": "src\\video.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\video.py",
+              "RelativeToolTip": "src\\video.py",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:21:12.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "command_parser.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\command_parser.py",
+              "RelativeDocumentMoniker": "src\\command_parser.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\src\\command_parser.py",
+              "RelativeToolTip": "src\\command_parser.py",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAGEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:19:34.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "part2_test.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part2_test.py",
+              "RelativeDocumentMoniker": "test\\part2_test.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\part2_test.py",
+              "RelativeToolTip": "test\\part2_test.py",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:18:51.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "videolibrary_test.py",
+              "DocumentMoniker": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\videolibrary_test.py",
+              "RelativeDocumentMoniker": "test\\videolibrary_test.py",
+              "ToolTip": "C:\\Users\\simce\\Documents\\portfolio\\Bright_Networks_Google_YT_Challenge\\test\\videolibrary_test.py",
+              "RelativeToolTip": "test\\videolibrary_test.py",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
+              "WhenOpened": "2025-02-10T02:13:04.566Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

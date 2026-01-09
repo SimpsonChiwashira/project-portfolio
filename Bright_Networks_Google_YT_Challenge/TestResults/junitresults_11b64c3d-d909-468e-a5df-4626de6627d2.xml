@@ -1,0 +1,1201 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="62" skipped="0" tests="71" time="0.855" timestamp="2025-08-02T23:11:03.724488" hostname="Simpson"><testcase classname="test.part1_test" name="test_continue_none_playing" file="test\part1_test.py" line="231" time="0.023"><failure message="AssertionError: assert 'Cannot continue video: No video is currently playing' in 'continue_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83596A0&gt;
+
+    def test_continue_none_playing(capfd):
+        player = VideoPlayer()
+        player.continue_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot continue video: No video is currently playing" in lines[0]
+E       AssertionError: assert 'Cannot continue video: No video is currently playing' in 'continue_video needs implementation'
+
+test\part1_test.py:238: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_continue_video" file="test\part1_test.py" line="208" time="0.004"><failure message="AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C7EB5370&gt;
+
+    def test_continue_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        player.continue_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Pausing video: Amazing Cats" in lines[1]
+E       AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'
+
+test\part1_test.py:218: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_continue_video_not_paused" file="test\part1_test.py" line="221" time="0.004"><failure message="AssertionError: assert 'Cannot continue video: Video is not paused' in 'continue_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8372F70&gt;
+
+    def test_continue_video_not_paused(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.continue_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Cannot continue video: Video is not paused" in lines[1]
+E       AssertionError: assert 'Cannot continue video: Video is not paused' in 'continue_video needs implementation'
+
+test\part1_test.py:229: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_number_of_videos" file="test\part1_test.py" line="4" time="0.003"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_pause_already_paused_video" file="test\part1_test.py" line="186" time="0.004"><failure message="AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C28E0&gt;
+
+    def test_pause_already_paused_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        player.pause_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Pausing video: Amazing Cats" in lines[1]
+E       AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'
+
+test\part1_test.py:196: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_pause_video" file="test\part1_test.py" line="145" time="0.004"><failure message="AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8372EE0&gt;
+
+    def test_pause_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Pausing video: Amazing Cats" in lines[1]
+E       AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'
+
+test\part1_test.py:154: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_pause_video_none_playing" file="test\part1_test.py" line="199" time="0.004"><failure message="AssertionError: assert 'Cannot pause video: No video is currently playing' in 'pause_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C08B0&gt;
+
+    def test_pause_video_none_playing(capfd):
+        player = VideoPlayer()
+        player.pause_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot pause video: No video is currently playing" in lines[0]
+E       AssertionError: assert 'Cannot pause video: No video is currently playing' in 'pause_video needs implementation'
+
+test\part1_test.py:206: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_pause_video_play_video" file="test\part1_test.py" line="168" time="0.004"><failure message="AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C5B20&gt;
+
+    def test_pause_video_play_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        player.play_video("amazing_cats_video_id")
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 5
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Pausing video: Amazing Cats" in lines[1]
+E       AssertionError: assert 'Pausing video: Amazing Cats' in 'pause_video needs implementation'
+
+test\part1_test.py:179: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_pause_video_show_playing" file="test\part1_test.py" line="156" time="0.004"><failure message="AssertionError: assert 'Currently playing: Amazing Cats (amazing_cats_video_id) [#cat #animal] - PAUSED' in 'show_playing needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8389A90&gt;
+
+    def test_pause_video_show_playing(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+&gt;       assert "Currently playing: Amazing Cats (amazing_cats_video_id) " \
+               "[#cat #animal] - PAUSED" in lines[2]
+E       AssertionError: assert 'Currently playing: Amazing Cats (amazing_cats_video_id) [#cat #animal] - PAUSED' in 'show_playing needs implementation'
+
+test\part1_test.py:165: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_random_stops_previous_video" file="test\part1_test.py" line="111" time="0.004"><failure message="AssertionError: assert 2 == 3&#10; +  where 2 = len(['Playing video: Amazing Cats', 'play_random_video needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83CC280&gt;
+
+    def test_play_random_stops_previous_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.play_random_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 3
+E       AssertionError: assert 2 == 3
+E        +  where 2 = len(['Playing video: Amazing Cats', 'play_random_video needs implementation'])
+
+test\part1_test.py:118: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_random_video" file="test\part1_test.py" line="100" time="0.004"><failure message="AssertionError: assert None&#10; +  where None = &lt;function match at 0x000001C9C58894C0&gt;('Playing video: (Amazing Cats|Another Cat Video|Funny Dogs|Life at Google|Video about nothing)', 'play_random_video needs implementation\n')&#10; +    where &lt;function match at 0x000001C9C58894C0&gt; = re.match">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8389610&gt;
+
+    def test_play_random_video(capfd):
+        player = VideoPlayer()
+        player.play_random_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert re.match(
+            "Playing video: (Amazing Cats|Another Cat Video|Funny Dogs|Life at Google|Video about nothing)",
+            out)
+E       AssertionError: assert None
+E        +  where None = &lt;function match at 0x000001C9C58894C0&gt;('Playing video: (Amazing Cats|Another Cat Video|Funny Dogs|Life at Google|Video about nothing)', 'play_random_video needs implementation\n')
+E        +    where &lt;function match at 0x000001C9C58894C0&gt; = re.match
+
+test\part1_test.py:107: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_video" file="test\part1_test.py" line="25" time="0.004"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_video_dont_stop_previous_if_nonexistent" file="test\part1_test.py" line="55" time="0.003"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_video_nonexistent" file="test\part1_test.py" line="34" time="0.003"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_play_video_stop_previous" file="test\part1_test.py" line="43" time="0.003"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_show_all_videos" file="test\part1_test.py" line="11" time="0.003"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_show_nothing_playing" file="test\part1_test.py" line="136" time="0.004"><failure message="AssertionError: assert 'No video is currently playing' in 'show_playing needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C1C70&gt;
+
+    def test_show_nothing_playing(capfd):
+        player = VideoPlayer()
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "No video is currently playing" in lines[0]
+E       AssertionError: assert 'No video is currently playing' in 'show_playing needs implementation'
+
+test\part1_test.py:143: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_show_playing" file="test\part1_test.py" line="125" time="0.004"><failure message="AssertionError: assert 'Currently playing: Amazing Cats (amazing_cats_video_id) [#cat #animal]' in 'show_playing needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D4D30&gt;
+
+    def test_show_playing(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Currently playing: Amazing Cats (amazing_cats_video_id) [#cat #animal]" in lines[1]
+E       AssertionError: assert 'Currently playing: Amazing Cats (amazing_cats_video_id) [#cat #animal]' in 'show_playing needs implementation'
+
+test\part1_test.py:134: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_stop_video" file="test\part1_test.py" line="67" time="0.004"><failure message="TypeError: stop_video() missing 1 required positional argument: 'video_id'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C1BB0&gt;
+
+    def test_stop_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+&gt;       player.stop_video()
+E       TypeError: stop_video() missing 1 required positional argument: 'video_id'
+
+test\part1_test.py:71: TypeError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+Playing video: Amazing Cats
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_stop_video_none_playing" file="test\part1_test.py" line="91" time="0.003"><failure message="TypeError: stop_video() missing 1 required positional argument: 'video_id'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D4310&gt;
+
+    def test_stop_video_none_playing(capfd):
+        player = VideoPlayer()
+&gt;       player.stop_video()
+E       TypeError: stop_video() missing 1 required positional argument: 'video_id'
+
+test\part1_test.py:94: TypeError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part1_test" name="test_stop_video_twice" file="test\part1_test.py" line="78" time="0.004"><failure message="TypeError: stop_video() missing 1 required positional argument: 'video_id'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D1D60&gt;
+
+    def test_stop_video_twice(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+&gt;       player.stop_video()
+E       TypeError: stop_video() missing 1 required positional argument: 'video_id'
+
+test\part1_test.py:82: TypeError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+Playing video: Amazing Cats
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_add_to_playlist" file="test\part2_test.py" line="24" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_COOL_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C02E0&gt;
+
+    def test_add_to_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_COOL_playlist")
+        player.add_to_playlist("my_cool_PLAYLIST", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully created new playlist: my_COOL_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_COOL_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:32: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_add_to_playlist_already_added" file="test\part2_test.py" line="35" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83F66A0&gt;
+
+    def test_add_to_playlist_already_added(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:44: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_add_to_playlist_nonexistent_playlist" file="test\part2_test.py" line="61" time="0.004"><failure message="AssertionError: assert 'Cannot add video to another_playlist: Playlist does not exist' in 'add_to_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C0CD0&gt;
+
+    def test_add_to_playlist_nonexistent_playlist(capfd):
+        player = VideoPlayer()
+        player.add_to_playlist("another_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot add video to another_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot add video to another_playlist: Playlist does not exist' in 'add_to_playlist needs implementation'
+
+test\part2_test.py:68: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_add_to_playlist_nonexistent_playlist_nonexistent_video" file="test\part2_test.py" line="70" time="0.005"><failure message="AssertionError: assert 'Cannot add video to another_playlist: Playlist does not exist' in 'add_to_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83F6F70&gt;
+
+    def test_add_to_playlist_nonexistent_playlist_nonexistent_video(capfd):
+        player = VideoPlayer()
+        player.add_to_playlist("another_playlist", "does_not_exist_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot add video to another_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot add video to another_playlist: Playlist does not exist' in 'add_to_playlist needs implementation'
+
+test\part2_test.py:77: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_add_to_playlist_nonexistent_video" file="test\part2_test.py" line="48" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C1AC0&gt;
+
+    def test_add_to_playlist_nonexistent_video(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.add_to_playlist("my_cool_playlist", "some_other_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:57: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_clear_playlist" file="test\part2_test.py" line="191" time="0.004"><failure message="AssertionError: assert 5 == 7&#10; +  where 5 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation', 'clears_playlist needs implementation', 'show_playlist needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D15B0&gt;
+
+    def test_clear_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.show_playlist("my_cool_playlist")
+        player.clear_playlist("my_COOL_playlist")
+        player.show_playlist("my_cool_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 7
+E       AssertionError: assert 5 == 7
+E        +  where 5 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation', 'clears_playlist needs implementation', 'show_playlist needs implementation'])
+
+test\part2_test.py:201: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_clear_playlist_nonexistent" file="test\part2_test.py" line="210" time="0.004"><failure message="AssertionError: assert 'Cannot clear playlist my_cool_playlist: Playlist does not exist' in 'clears_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83CC220&gt;
+
+    def test_clear_playlist_nonexistent(capfd):
+        player = VideoPlayer()
+        player.clear_playlist("my_cool_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot clear playlist my_cool_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot clear playlist my_cool_playlist: Playlist does not exist' in 'clears_playlist needs implementation'
+
+test\part2_test.py:217: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_create_existing_playlist" file="test\part2_test.py" line="12" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83F6F40&gt;
+
+    def test_create_existing_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.create_playlist("my_COOL_PLAYLIST")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:20: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_create_playlist" file="test\part2_test.py" line="3" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_PLAYlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8446190&gt;
+
+    def test_create_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_PLAYlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Successfully created new playlist: my_PLAYlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_PLAYlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:10: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_delete_playlist" file="test\part2_test.py" line="219" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83CC2E0&gt;
+
+    def test_delete_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.delete_playlist("my_cool_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:227: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_delete_playlist_nonexistent" file="test\part2_test.py" line="230" time="0.004"><failure message="AssertionError: assert 'Cannot delete playlist my_cool_playlist: Playlist does not exist' in 'deletes_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844ACA0&gt;
+
+    def test_delete_playlist_nonexistent(capfd):
+        player = VideoPlayer()
+        player.delete_playlist("my_cool_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot delete playlist my_cool_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot delete playlist my_cool_playlist: Playlist does not exist' in 'deletes_playlist needs implementation'
+
+test\part2_test.py:237: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_remove_from_playlist" file="test\part2_test.py" line="143" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83F5DC0&gt;
+
+    def test_remove_from_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.remove_from_playlist("my_COOL_playlist", "amazing_cats_video_id")
+        player.remove_from_playlist("my_cool_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 4
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:153: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_remove_from_playlist_nonexistent_playlist" file="test\part2_test.py" line="182" time="0.004"><failure message="AssertionError: assert 'Cannot remove video from my_cool_playlist: Playlist does not exist' in 'remove_from_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83CCA30&gt;
+
+    def test_remove_from_playlist_nonexistent_playlist(capfd):
+        player = VideoPlayer()
+        player.remove_from_playlist("my_cool_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot remove video from my_cool_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot remove video from my_cool_playlist: Playlist does not exist' in 'remove_from_playlist needs implementation'
+
+test\part2_test.py:189: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_remove_from_playlist_nonexistent_video" file="test\part2_test.py" line="169" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C84461F0&gt;
+
+    def test_remove_from_playlist_nonexistent_video(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.remove_from_playlist("my_cool_playlist", "some_other_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:178: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_remove_from_playlist_then_re_add" file="test\part2_test.py" line="118" time="0.004"><failure message="AssertionError: assert 6 == 8&#10; +  where 6 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'add_to_playlist needs implementation...move_from_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C84476A0&gt;
+
+    def test_remove_from_playlist_then_re_add(capfd):
+        player = VideoPlayer()
+        player.create_playlist("MY_playlist")
+        player.add_to_playlist("my_playlist", "amazing_cats_video_id")
+        player.add_to_playlist("my_playlist", "life_at_google_video_id")
+        player.remove_from_playlist("my_playlist", "amazing_cats_video_id")
+        player.add_to_playlist("my_playlist", "amazing_cats_video_id")
+        player.show_playlist("my_playLIST")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 8
+E       AssertionError: assert 6 == 8
+E        +  where 6 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'add_to_playlist needs implementation...move_from_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation'])
+
+test\part2_test.py:129: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_remove_from_playlist_video_is_not_in_playlist" file="test\part2_test.py" line="158" time="0.004"><failure message="AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8446F10&gt;
+
+    def test_remove_from_playlist_video_is_not_in_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.remove_from_playlist("my_cool_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully created new playlist: my_cool_playlist" in lines[0]
+E       AssertionError: assert 'Successfully created new playlist: my_cool_playlist' in 'create_playlist needs implementation'
+
+test\part2_test.py:166: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_show_all_playlists" file="test\part2_test.py" line="88" time="0.004"><failure message="AssertionError: assert 3 == 5&#10; +  where 3 = len(['create_playlist needs implementation', 'create_playlist needs implementation', 'show_all_playlists needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844A640&gt;
+
+    def test_show_all_playlists(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playLIST")
+        player.create_playlist("anotheR_playlist")
+        player.show_all_playlists()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 3 == 5
+E        +  where 3 = len(['create_playlist needs implementation', 'create_playlist needs implementation', 'show_all_playlists needs implementation'])
+
+test\part2_test.py:96: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_show_all_playlists_no_playlists_exist" file="test\part2_test.py" line="79" time="0.004"><failure message="AssertionError: assert 'No playlists exist yet' in 'show_all_playlists needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8453BB0&gt;
+
+    def test_show_all_playlists_no_playlists_exist(capfd):
+        player = VideoPlayer()
+        player.show_all_playlists()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "No playlists exist yet" in lines[0]
+E       AssertionError: assert 'No playlists exist yet' in 'show_all_playlists needs implementation'
+
+test\part2_test.py:86: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_show_playlist" file="test\part2_test.py" line="101" time="0.004"><failure message="AssertionError: assert 4 == 6&#10; +  where 4 = len(['create_playlist needs implementation', 'show_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844A490&gt;
+
+    def test_show_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_cool_playlist")
+        player.show_playlist("my_cool_playlist")
+        player.add_to_playlist("my_cool_playlist", "amazing_cats_video_id")
+        player.show_playlist("my_COOL_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 6
+E       AssertionError: assert 4 == 6
+E        +  where 4 = len(['create_playlist needs implementation', 'show_playlist needs implementation', 'add_to_playlist needs implementation', 'show_playlist needs implementation'])
+
+test\part2_test.py:110: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part2_test" name="test_show_playlist_nonexistent_playlist" file="test\part2_test.py" line="134" time="0.004"><failure message="AssertionError: assert 'Cannot show playlist another_playlist: Playlist does not exist' in 'show_playlist needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8446490&gt;
+
+    def test_show_playlist_nonexistent_playlist(capfd):
+        player = VideoPlayer()
+        player.show_playlist("another_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot show playlist another_playlist: Playlist does not exist" in lines[0]
+E       AssertionError: assert 'Cannot show playlist another_playlist: Playlist does not exist' in 'show_playlist needs implementation'
+
+test\part2_test.py:141: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_and_play_answer" file="test\part3_test.py" line="22" time="0.006"><failure message="AssertionError: assert 1 == 6&#10; +  where 1 = len(['search_videos needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844A640&gt;
+
+    @mock.patch('builtins.input', lambda *args: '2')
+    def test_search_videos_and_play_answer(capfd):
+        player = VideoPlayer()
+        player.search_videos("cat")
+    
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 6
+E       AssertionError: assert 1 == 6
+E        +  where 1 = len(['search_videos needs implementation'])
+
+test\part3_test.py:30: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_invalid_number" file="test\part3_test.py" line="58" time="0.009"><failure message="AssertionError: assert 1 == 5&#10; +  where 1 = len(['search_videos needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C84461C0&gt;
+
+    @mock.patch('builtins.input', lambda *args: 'ab3g')
+    def test_search_videos_invalid_number(capfd):
+        player = VideoPlayer()
+        player.search_videos("cat")
+    
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 1 == 5
+E        +  where 1 = len(['search_videos needs implementation'])
+
+test\part3_test.py:66: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_no_results" file="test\part3_test.py" line="76" time="0.005"><failure message="AssertionError: assert 'No search results for blah' in 'search_videos needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C84474F0&gt;
+
+    def test_search_videos_no_results(capfd):
+        player = VideoPlayer()
+        player.search_videos("blah")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "No search results for blah" in lines[0]
+E       AssertionError: assert 'No search results for blah' in 'search_videos needs implementation'
+
+test\part3_test.py:83: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_number_out_of_bounds" file="test\part3_test.py" line="40" time="0.004"><failure message="AssertionError: assert 1 == 5&#10; +  where 1 = len(['search_videos needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8464B80&gt;
+
+    @mock.patch('builtins.input', lambda *args: '6')
+    def test_search_videos_number_out_of_bounds(capfd):
+        player = VideoPlayer()
+        player.search_videos("cat")
+    
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 1 == 5
+E        +  where 1 = len(['search_videos needs implementation'])
+
+test\part3_test.py:48: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_tag_no_results" file="test\part3_test.py" line="135" time="0.005"><failure message="AssertionError: assert 'No search results for #blah' in 'search_videos_tag needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8464C10&gt;
+
+    def test_search_videos_tag_no_results(capfd):
+        player = VideoPlayer()
+        player.search_videos_tag("#blah")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "No search results for #blah" in lines[0]
+E       AssertionError: assert 'No search results for #blah' in 'search_videos_tag needs implementation'
+
+test\part3_test.py:142: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_with_no_answer" file="test\part3_test.py" line="4" time="0.004"><failure message="AssertionError: assert 1 == 5&#10; +  where 1 = len(['search_videos needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8447190&gt;
+
+    @mock.patch('builtins.input', lambda *args: 'No')
+    def test_search_videos_with_no_answer(capfd):
+        player = VideoPlayer()
+        player.search_videos("cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 1 == 5
+E        +  where 1 = len(['search_videos needs implementation'])
+
+test\part3_test.py:11: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_with_tag_no_answer" file="test\part3_test.py" line="85" time="0.004"><failure message="AssertionError: assert 1 == 5&#10; +  where 1 = len(['search_videos_tag needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83724C0&gt;
+
+    @mock.patch('builtins.input', lambda *args: 'No')
+    def test_search_videos_with_tag_no_answer(capfd):
+        player = VideoPlayer()
+        player.search_videos_tag("#cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 1 == 5
+E        +  where 1 = len(['search_videos_tag needs implementation'])
+
+test\part3_test.py:92: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_with_tag_number_out_of_bounds" file="test\part3_test.py" line="118" time="0.004"><failure message="AssertionError: assert 1 == 5&#10; +  where 1 = len(['search_videos_tag needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844C490&gt;
+
+    @mock.patch('builtins.input', lambda *args: '5')
+    def test_search_videos_with_tag_number_out_of_bounds(capfd):
+        player = VideoPlayer()
+        player.search_videos_tag("#cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 1 == 5
+E        +  where 1 = len(['search_videos_tag needs implementation'])
+
+test\part3_test.py:125: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part3_test" name="test_search_videos_with_tag_play_answered_number" file="test\part3_test.py" line="101" time="0.004"><failure message="AssertionError: assert 1 == 6&#10; +  where 1 = len(['search_videos_tag needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8453CA0&gt;
+
+    @mock.patch('builtins.input', lambda *args: '1')
+    def test_search_videos_with_tag_play_answered_number(capfd):
+        player = VideoPlayer()
+        player.search_videos_tag("#cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 6
+E       AssertionError: assert 1 == 6
+E        +  where 1 = len(['search_videos_tag needs implementation'])
+
+test\part3_test.py:108: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_allow_video" file="test\part4_test.py" line="220" time="0.005"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844CE20&gt;
+
+    def test_allow_video(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.allow_video("amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully flagged video: Amazing Cats " \
+               "(reason: dont_like_cats)" in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'
+
+test\part4_test.py:228: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_allow_video_nonexistent" file="test\part4_test.py" line="241" time="0.007"><failure message="AssertionError: assert 'Cannot remove flag from video: Video does not exist' in 'allow_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D1340&gt;
+
+    def test_allow_video_nonexistent(capfd):
+        player = VideoPlayer()
+        player.allow_video("video_does_not_exist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot remove flag from video: Video does not exist" in lines[0]
+E       AssertionError: assert 'Cannot remove flag from video: Video does not exist' in 'allow_video needs implementation'
+
+test\part4_test.py:248: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_allow_video_not_flagged" file="test\part4_test.py" line="232" time="0.005"><failure message="AssertionError: assert 'Cannot remove flag from video: Video is not flagged' in 'allow_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83F52B0&gt;
+
+    def test_allow_video_not_flagged(capfd):
+        player = VideoPlayer()
+        player.allow_video("amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot remove flag from video: Video is not flagged" in lines[0]
+E       AssertionError: assert 'Cannot remove flag from video: Video is not flagged' in 'allow_video needs implementation'
+
+test\part4_test.py:239: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_allow_video_show_playlist" file="test\part4_test.py" line="250" time="0.004"><failure message="AssertionError: assert 6 == 8&#10; +  where 6 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'flag_video needs implementation', 'show_playlist needs implementation', 'allow_video needs implementation', 'show_playlist needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8446070&gt;
+
+    def test_allow_video_show_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_playlist")
+        player.add_to_playlist("my_playlist", "amazing_cats_video_id")
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.show_playlist("my_playlist")
+        player.allow_video("amazing_cats_video_id")
+        player.show_playlist("my_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 8
+E       AssertionError: assert 6 == 8
+E        +  where 6 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'flag_video needs implementation', 'show_playlist needs implementation', 'allow_video needs implementation', 'show_playlist needs implementation'])
+
+test\part4_test.py:261: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_add_to_playlist" file="test\part4_test.py" line="83" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: Not supplied)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83CC040&gt;
+
+    def test_flag_video_add_to_playlist(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id")
+        player.create_playlist("my_playlist")
+        player.add_to_playlist("my_playlist", "amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+&gt;       assert ("Successfully flagged video: Amazing Cats "
+                "(reason: Not supplied)") in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: Not supplied)' in 'flag_video needs implementation'
+
+test\part4_test.py:92: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_already_flagged" file="test\part4_test.py" line="25" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C22E0&gt;
+
+    def test_flag_video_already_flagged(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully flagged video: Amazing Cats (reason: dont_like_cats)" in \
+               lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'
+
+test\part4_test.py:33: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_can_no_longer_play" file="test\part4_test.py" line="46" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: Not supplied)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8458370&gt;
+
+    def test_flag_video_can_no_longer_play(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id")
+        player.play_video("amazing_cats_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 2
+&gt;       assert "Successfully flagged video: Amazing Cats " \
+               "(reason: Not supplied)" in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: Not supplied)' in 'flag_video needs implementation'
+
+test\part4_test.py:54: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_leaves_video_if_video_is_different" file="test\part4_test.py" line="188" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Another Cat Video (reason: dont_like_cats)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C846A490&gt;
+
+    def test_flag_video_leaves_video_if_video_is_different(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.flag_video("another_cat_video_id", "dont_like_cats")
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 3
+        assert "Playing video: Amazing Cats" in lines[0]
+&gt;       assert "Successfully flagged video: Another Cat Video " \
+               "(reason: dont_like_cats)" in lines[1]
+E       AssertionError: assert 'Successfully flagged video: Another Cat Video (reason: dont_like_cats)' in 'flag_video needs implementation'
+
+test\part4_test.py:198: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_nonexistent" file="test\part4_test.py" line="37" time="0.004"><failure message="AssertionError: assert 'Cannot flag video: Video does not exist' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8458A00&gt;
+
+    def test_flag_video_nonexistent(capfd):
+        player = VideoPlayer()
+        player.flag_video("video_does_not_exist", "flag_video_reason")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Cannot flag video: Video does not exist" in lines[0]
+E       AssertionError: assert 'Cannot flag video: Video does not exist' in 'flag_video needs implementation'
+
+test\part4_test.py:44: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_search_videos" file="test\part4_test.py" line="135" time="0.005"><failure message="AssertionError: assert 2 == 5&#10; +  where 2 = len(['flag_video needs implementation', 'search_videos needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C53D0&gt;
+
+    @mock.patch('builtins.input', lambda *args: 'No')
+    def test_flag_video_search_videos(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.search_videos("cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 2 == 5
+E        +  where 2 = len(['flag_video needs implementation', 'search_videos needs implementation'])
+
+test\part4_test.py:143: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_search_videos_with_tag" file="test\part4_test.py" line="154" time="0.005"><failure message="AssertionError: assert 2 == 5&#10; +  where 2 = len(['flag_video needs implementation', 'search_videos_tag needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83D1790&gt;
+
+    @mock.patch('builtins.input', lambda *args: 'No')
+    def test_flag_video_search_videos_with_tag(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.search_videos_tag("#cat")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 2 == 5
+E        +  where 2 = len(['flag_video needs implementation', 'search_videos_tag needs implementation'])
+
+test\part4_test.py:162: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_show_all_videos" file="test\part4_test.py" line="116" time="0.005"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C846A610&gt;
+
+    def test_flag_video_show_all_videos(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.show_all_videos()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 7
+&gt;       assert "Successfully flagged video: Amazing Cats " \
+               "(reason: dont_like_cats)" in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'
+
+test\part4_test.py:124: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_show_playlist" file="test\part4_test.py" line="98" time="0.004"><failure message="AssertionError: assert 4 == 5&#10; +  where 4 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'flag_video needs implementation', 'show_playlist needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C844CCA0&gt;
+
+    def test_flag_video_show_playlist(capfd):
+        player = VideoPlayer()
+        player.create_playlist("my_playlist")
+        player.add_to_playlist("my_playlist", "amazing_cats_video_id")
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.show_playlist("my_playlist")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 4 == 5
+E        +  where 4 = len(['create_playlist needs implementation', 'add_to_playlist needs implementation', 'flag_video needs implementation', 'show_playlist needs implementation'])
+
+test\part4_test.py:107: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_stops_paused_video" file="test\part4_test.py" line="203" time="0.004"><failure message="AssertionError: assert 4 == 5&#10; +  where 4 = len(['Playing video: Amazing Cats', 'pause_video needs implementation', 'flag_video needs implementation', 'show_playing needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C847AC40&gt;
+
+    def test_flag_video_stops_paused_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.pause_video()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 5
+E       AssertionError: assert 4 == 5
+E        +  where 4 = len(['Playing video: Amazing Cats', 'pause_video needs implementation', 'flag_video needs implementation', 'show_playing needs implementation'])
+
+test\part4_test.py:212: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_stops_playing_video" file="test\part4_test.py" line="173" time="0.004"><failure message="AssertionError: assert 3 == 4&#10; +  where 3 = len(['Playing video: Amazing Cats', 'flag_video needs implementation', 'show_playing needs implementation'])">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C06A0&gt;
+
+    def test_flag_video_stops_playing_video(capfd):
+        player = VideoPlayer()
+        player.play_video("amazing_cats_video_id")
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        player.show_playing()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+&gt;       assert len(lines) == 4
+E       AssertionError: assert 3 == 4
+E        +  where 3 = len(['Playing video: Amazing Cats', 'flag_video needs implementation', 'show_playing needs implementation'])
+
+test\part4_test.py:181: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_with_reason" file="test\part4_test.py" line="5" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C847A100&gt;
+
+    def test_flag_video_with_reason(capfd):
+        player = VideoPlayer()
+        player.flag_video("amazing_cats_video_id", "dont_like_cats")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Successfully flagged video: Amazing Cats (reason: dont_like_cats)" \
+               in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Amazing Cats (reason: dont_like_cats)' in 'flag_video needs implementation'
+
+test\part4_test.py:12: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_video_without_reason" file="test\part4_test.py" line="15" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Another Cat Video (reason: Not supplied)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C8389640&gt;
+
+    def test_flag_video_without_reason(capfd):
+        player = VideoPlayer()
+        player.flag_video("another_cat_video_id")
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 1
+&gt;       assert "Successfully flagged video: Another Cat Video " \
+               "(reason: Not supplied)" in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Another Cat Video (reason: Not supplied)' in 'flag_video needs implementation'
+
+test\part4_test.py:22: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.part4_test" name="test_flag_videos_play_random" file="test\part4_test.py" line="59" time="0.004"><failure message="AssertionError: assert 'Successfully flagged video: Funny Dogs (reason: Not supplied)' in 'flag_video needs implementation'">capfd = &lt;_pytest.capture.CaptureFixture object at 0x000001C9C83C0F70&gt;
+
+    def test_flag_videos_play_random(capfd):
+        player = VideoPlayer()
+        player.flag_video("funny_dogs_video_id")
+        player.flag_video("amazing_cats_video_id")
+        player.flag_video("another_cat_video_id")
+        player.flag_video("life_at_google_video_id")
+        player.flag_video("nothing_video_id")
+        player.play_random_video()
+        out, err = capfd.readouterr()
+        lines = out.splitlines()
+        assert len(lines) == 6
+&gt;       assert "Successfully flagged video: Funny Dogs " \
+               "(reason: Not supplied)" in lines[0]
+E       AssertionError: assert 'Successfully flagged video: Funny Dogs (reason: Not supplied)' in 'flag_video needs implementation'
+
+test\part4_test.py:71: AssertionError</failure><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.videolibrary_test" name="test_library_has_all_videos" file="test\videolibrary_test.py" line="3" time="0.001"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.videolibrary_test" name="test_parses_tags_correctly" file="test\videolibrary_test.py" line="8" time="0.001"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase><testcase classname="test.videolibrary_test" name="test_parses_video_correctly_without_tags" file="test\videolibrary_test.py" line="18" time="0.001"><system-out>--------------------------------- Captured Log ---------------------------------
+
+--------------------------------- Captured Out ---------------------------------
+
+</system-out><system-err>--------------------------------- Captured Err ---------------------------------
+
+</system-err></testcase></testsuite></testsuites>

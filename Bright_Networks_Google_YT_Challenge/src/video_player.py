@@ -8,6 +8,7 @@ class VideoPlayer:
 
     def __init__(self):
         self._video_library = VideoLibrary()
+        self._current_video = None
 
     def number_of_videos(self):
         num_videos = len(self._video_library.get_all_videos())
@@ -15,11 +16,13 @@ class VideoPlayer:
 
     def show_all_videos(self):
         """Returns all videos."""
-
-        print("Here are the available videos; ")
-        for item in (self._video_library._videos):
-            print(item)
-        ##print("show_all_videos needs implementation")
+        
+        videos = self._video_library.get_all_videos()
+        videos.sort(key=lambda video: video.title)
+        
+        print("Here's a list of all available videos:")
+        for video in videos:
+            print(f"{video.title} ({video.video_id}) [{' '.join(video.tags)}]")
 
     def play_video(self, video_id):
         """Plays the respective video.
@@ -27,16 +30,31 @@ class VideoPlayer:
         Args:
             video_id: The video_id to be played.
         """
-        for vid in (self._video_library._videos):
-            if vid == command:
-                print(f"video is playing:{vid}")
+        video = self._video_library.get_video(video_id)
+        if not video:
+            print(f"Cannot play video: Video does not exist")
+            return
+
+        if self._current_video:
+            print(f"Stopping video: {self._current_video.title}")
+        
+        self._current_video = video
+        print(f"Playing video: {video.title}")
         ##print("play_video needs implementation")
 
-    def stop_video(self):
+    def stop_video(self, video_id):
         """Stops the current video."""
-
-        print("stop_video needs implementation")
-
+        video = self._video_library.get_video(video_id)
+        
+        if self._current_video:
+            print(f"Stopping video: {self._current_video.title}")
+            self._current_video = None
+        else:
+            print("Cannot stop video: No video is currently playing")
+        ##
+        ##
+        ##
+        ##print("stop_video needs implementation")  
     def play_random_video(self):
         """Plays a random video from the video library."""
 
