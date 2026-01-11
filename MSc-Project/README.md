@@ -5,7 +5,7 @@ This README document consists of whatever steps are necessary to get the applica
 ### What is this repository for? ##
 An Evaluation of Supervised Learning Models in the Prediction and Analysis of Customer Churn
 
-### Abstract##
+### Abstract ###
  
 This study investigates the effectiveness of supervised learning models in predicting and analysing customer churn within the Telecommunications and Banking Marketing sectors. Utilising sector-specific datasets, the research explores imbalanced data handling techniques, employing both Random Undersampling and SMOTE to achieve balanced class representation. Evaluation of Support Vector Machines, Artificial Neural Networks, and Random Forests, post-hyperparameter tuning, identifies Random Forests as the optimal classifier across all datasets. The study emphasises the impact of resampling techniques on classifier performance pre- and post-model refinement, recommending the utilisation of Random Forests for predictive accuracy in such sectors.
 
