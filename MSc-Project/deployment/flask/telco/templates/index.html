@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telco Churn Prediction</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #2575b5;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Customer Churn in Telco</h1>
+    </header>
+    <div class="container">
+        <h2>Enter the Customer details</h2>
+        <p>
+            This is simple testing platform to test our ML algorithm. Developed by Simpson Chiwashira Student at University of Hertfordshire for MSc Project.
+        </p>
+		<Center>
+		<form method="POST" action="{{url_for('predict')}}">
+		<table>
+			<tr>
+                <td>Gender</td>
+                <td>
+                <select name="gender" required>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                </select>
+                </td>        
+            </tr>
+			<tr>
+                <td>Senior Citizen</td>
+                <td>
+                <select name="SeniorCitizen" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+                </td>        
+            </tr>
+            <tr>
+                <td>Partner</td>
+                <td>
+                <select name="Partner" required>
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+                </td>        
+            </tr>
+			<tr>
+                    <td>Dependents</td>
+                    <td>
+                    <select name="Dependents" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Tenure</td>	
+                    <td><input type="number" name="tenure" placeholder="Tenure in Months" required></td>
+                    </tr>
+				<tr>
+                    <td>Phone Service</td>
+                    <td>
+                    <select name="PhoneService" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Multiple Lines</td>
+                    <td>
+                    <select name="MultipleLines" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Internet Service</td>
+                    <td>
+                    <select name="InternetService" required>
+                        <option value="DSL">DSL</option>
+                        <option value="Fiber optic">Fiber Optic</option>
+                        <option value="No">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Online Security</td>
+                    <td>
+                    <select name="OnlineSecurity" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Online Backup</td>
+                    <td>
+                    <select name="OnlineBackup" required >                                                                                                                                                                                                                                                                                                                                                                                                                                                   y" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Device Protection</td>
+                    <td>
+                    <select name="DeviceProtection" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Tech Support</td>
+                    <td>
+                    <select name="TechSupport" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Streaming TV</td>
+                    <td>
+                    <select name="StreamingTV" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+			
+                <tr>
+                    <td>Streaming Movies</td>
+                    <td>
+                    <select name="StreamingMovies" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Contract</td>
+                    <td>
+                    <select name="Contract" required>
+                        <option value="Month-to-month">Month-to-month</option>
+                        <option value="One year">One year</option>
+                        <option value="Two year">Two year</option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Paperless Billing</td>
+                    <td>
+                    <select name="PaperlessBilling" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    </td>        
+                </tr>
+			<tr>
+                    <td>Payment Method</td>
+                    <td>
+                    <select name="PaymentMethod" required>
+                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                        <option value="Credit card (automatic)">Credit card (automatic)</option>
+                        <option value="Electronic check">Electronic check</option>
+						<option value="Mailed check">Mailed check </option>
+                    </select>
+                    </td>        
+                </tr>
+                <tr>
+                    <td>Monthly Charges</td>	
+                    <td><input type="number" name="MonthlyCharges" placeholder="Charges in $" required></td>
+                    </tr>
+				<tr>
+                    <tr>
+                        <td>Total Charges</td>	
+                        <td><input type="number" name="TotalCharges" placeholder="Charges in $" required></td>
+                        </tr>
+                    <tr>
+			<tr>
+			<td></td>	
+			<td><input type="submit" class="button" name="submit" value="Predict" required></td>
+			</tr>
+		</table>
+	</form>
+        <br><br><h3 class="alert alert-primary text-center" role="alert">{{prediction_text}}<h3>
+		
+    </div>
+</body>
+</html>

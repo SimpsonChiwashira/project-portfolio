@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Churn Prediction</title>
+    <style>
+        /* CSS styles go here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #2575b5;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Customer Churn in bank</h1>
+    </header>
+    <div class="container">
+        <h2>Enter the Customer details</h2>
+        <p>
+            This is simple testing platform to test our ML algorithm. Developed by Simpson Chiwashira Student at University of Hertfordshire for MSc Project.
+        </p>
+		<Center>
+		<form method="POST" action="{{url_for('predict')}}">
+		<table>
+			<tr>
+			<td>Age</td>	
+			<td><input type="number" name="age" placeholder="Age (in years)" required></td>
+			</tr>
+			<tr>
+                    <td>Job</td>
+                    <td>
+                    <select name="job" required>
+                        <option>*job</option>
+                        <option value="admin">admin</option>
+                        <option value="blue-colar">blue-colar</option>
+                        <option value="entreprenuer">entreprenuer</option>
+						<option value="housemaid">housemaid</option>
+                        <option value="management">management</option>
+                        <option value="retired">retired</option>
+						<option value="self-employed">self-employed</option>
+                        <option value="student">student</option>
+                        <option value="services">services</option>
+						<option value="technician">technician</option>
+                        <option value="unemployed">unemployed</option>
+                        <option value="unknown">unknown</option>
+                    </select>
+                    </td>        
+                </tr>
+			<tr>
+                    <td>Marital</td>
+                    <td>
+                    <select name="marital" placeholder="Marital" required>
+						<option>*Marital</option>
+                        <option value="single">single</option>
+                        <option value="married">married</option>
+                        <option value="divorced">divorced</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Education</td>
+                    <td>
+                    <select name="education" placeholder="Education" required>
+						<option>*Education</option>
+                        <option value="primary">primary</option>
+                        <option value="secondary">secondary</option>
+                        <option value="tertiary">tertiary</option>
+						<option value="unknown">unknown</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Default</td>
+                    <td>
+                    <select name="default" placeholder="default" required>
+						<option>*Default</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                    </td>        
+                </tr>
+			<tr>
+			<td>Balance</td>	
+			<td><input type="number" name="balance" placeholder="Balance in Euros (€) " required></td>
+			</tr>
+			<tr>
+                    <td>Housing</td>
+                    <td>
+                    <select name="housing" placeholder="Hosuing" required>
+						<option>*Housing</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Loan</td>
+                    <td>
+                    <select name="loan" placeholder="loan" required>
+						<option>*Loan</option>
+                        <option value="yes">yes</option>
+                        <option value="no">no</option>
+                    </select>
+                    </td>        
+                </tr>
+				<tr>
+                    <td>Contact</td>
+                    <td>
+                    <select name="contact" placeholder="contact" required>
+						<option>*Contact</option>
+                        <option value="cellular">cellular</option>
+                        <option value="telephone">telephone</option>
+                        <option value="unknown">unknown</option>
+                    </select>
+                    </td>        
+                </tr>
+			<tr>
+			<td>Day</td>	
+			<td><input type="number" name="day" placeholder="Day" required></td>
+			</tr>
+			<tr>
+			<td>Campaign</td>	
+			<td><input type="number" name="campaign" placeholder="Campaign" required></td>
+			</tr>
+			<tr>
+			<td>Pdays</td>	
+			<td><input type="number" name="pdays" placeholder="Pdays" required></td>
+			</tr>
+			<tr>
+			<td>Previous</td>	
+			<td><input type="number" name="previous" placeholder="Previous" required></td>
+			</tr>
+			<tr>
+                    <td>Poutcome</td>
+                    <td>
+                    <select name="poutcome" placeholder="poutcome" required>
+						<option>*Poutcome</option>
+                        <option value="failure">failure</option>
+                        <option value="other">other</option>
+                        <option value="success">success</option>
+						<option value="unknown">unknown</option>
+                    </select>
+                    </td>        
+                </tr>
+			<tr>
+			<td></td>	
+			<td><input type="submit" class="button" name="submit" value="Predict" required></td>
+			</tr>
+		</table>
+	</form>
+        <br><br><h3 class="alert alert-primary text-center" role="alert">{{prediction_text}}<h3>
+		
+    </div>
+</body>
+</html>
