@@ -23,7 +23,7 @@ I am Simpson Chiwashira, an MSc Advanced Computer Science graduate with expertis
 - Features: Command-line application, unit testing, IDE setup guides
 - **Status**: ✅ Complete with full test coverage
 
-### 3. [Rose Bank Web Application](./Rose%20Bank%20WebApp%20using%20PHP/)
+### 3. [Rose Bank Web Application](./Rose%20Bank%20PHP/)
 **Full-Stack Web Development**
 - Complete banking system with user authentication and admin panel
 - Technologies: PHP (Vanilla), MySQL, Bootstrap, HTML/CSS/JavaScript

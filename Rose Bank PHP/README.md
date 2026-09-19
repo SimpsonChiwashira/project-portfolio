@@ -51,7 +51,7 @@ rose-bank-webapp/
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd "Rose Bank WebApp using PHP"
+   cd "Rose Bank PHP"
    ```
 
 2. **Database Setup**
