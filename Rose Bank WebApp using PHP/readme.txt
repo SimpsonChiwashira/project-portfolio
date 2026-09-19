@@ -1,1 +1,0 @@
-This project was designed to emulate a banking system using PHP Vanilla. It was quite insightful as I was learning the language while implementing it on a WebApp. The frontend is a free template from Colorlib. 

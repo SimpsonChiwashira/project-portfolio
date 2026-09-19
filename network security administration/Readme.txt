@@ -1,1 +1,0 @@
-This project was created to show how two sites can be connected with each other. To design the network I used MS Visio and Cisco Packet Tracer to implement the designed system. I did not have enough time to add VPN. When I have enough time I will add it.  

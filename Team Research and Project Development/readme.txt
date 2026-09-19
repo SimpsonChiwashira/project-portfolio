@@ -1,1 +1,0 @@
-In this coursework, we used R programming language to visualise and run analysis as we were learning to report results from an experiment. We posed a research question and the hypothesis, then ran a statistical analysis and visualisations to come up with conclusive results that tell how significant the results are.  
